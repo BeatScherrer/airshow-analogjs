@@ -8,7 +8,7 @@ import { provideClientHydration } from "@angular/platform-browser";
 import { provideFileRouter, requestContextInterceptor } from "@analogjs/router";
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
 import { providePrimeNG } from "primeng/config";
-import Aura from "@primeng/themes/aura";
+import MtRobotPreset from "./mt-robot-preset";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,7 +22,10 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
-        preset: Aura,
+        preset: MtRobotPreset,
+        options: {
+          darkModeSelector: ".mt-robot-dark",
+        },
       },
     }),
   ],
