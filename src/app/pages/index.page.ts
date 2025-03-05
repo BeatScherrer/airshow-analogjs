@@ -1,14 +1,19 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal } from "@angular/core";
+import { ButtonModule } from "primeng/button";
 
 @Component({
-  selector: 'app-home',
+  selector: "app-home",
   standalone: true,
+  imports: [ButtonModule],
   template: `
     <div>
       <a href="https://analogjs.org/" target="_blank">
         <img alt="Analog Logo" class="logo analog" src="/analog.svg" />
       </a>
     </div>
+
+ <p-button label="Check" />
+
 
     <h2>Analog</h2>
 
