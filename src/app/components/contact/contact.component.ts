@@ -10,6 +10,7 @@ import { InputTextModule } from "primeng/inputtext";
 import { FloatLabelModule } from "primeng/floatlabel";
 import { IftaLabelModule } from "primeng/iftalabel";
 import { ButtonModule } from "primeng/button";
+import { MessageModule } from "primeng/message";
 
 @Component({
   selector: "app-contact",
@@ -20,6 +21,7 @@ import { ButtonModule } from "primeng/button";
     FloatLabelModule,
     IftaLabelModule,
     ButtonModule,
+    MessageModule,
   ],
   templateUrl: "./contact.component.html",
   styleUrl: "./contact.component.css",

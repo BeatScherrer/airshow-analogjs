@@ -3,6 +3,7 @@ import { ButtonModule } from "primeng/button";
 import { NavigationComponent } from "@components/navigation/navigation.component";
 import { FooterComponent } from "@components/footer/footer.component";
 import { ContactComponent } from "@components/contact/contact.component";
+import { NotificationsComponent } from "@components/notifications/notifications.component";
 
 @Component({
   selector: "app-home",
@@ -12,6 +13,7 @@ import { ContactComponent } from "@components/contact/contact.component";
     NavigationComponent,
     FooterComponent,
     ContactComponent,
+    NotificationsComponent,
   ],
   templateUrl: "./index.page.html",
 })
