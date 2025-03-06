@@ -1,0 +1,42 @@
+<form
+  [formGroup]="contactForm"
+  (ngSubmit)="onSubmit()"
+  class="flex flex-col gap-8"
+>
+  <p-floatlabel>
+    <input
+      type="text"
+      pInputText
+      formControlName="name"
+      id="name"
+      class="w-full"
+    />
+    <label for="name">Name</label>
+  </p-floatlabel>
+
+  <p-floatlabel>
+    <input
+      type="text"
+      pInputText
+      formControlName="email"
+      id="email"
+      class="w-full"
+    />
+    <label for="email">E-Mail</label>
+  </p-floatlabel>
+
+  <p-floatlabel>
+    <textarea
+      id="message_label"
+      rows="5"
+      cols="30"
+      pTextarea
+      formControlName="message"
+      style="resize: none"
+      class="w-full"
+    ></textarea>
+    <label for="message_label">Message</label>
+  </p-floatlabel>
+
+  <p-button label="Send" type="submit" [disabled]="!contactForm.valid" />
+</form>
