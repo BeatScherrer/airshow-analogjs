@@ -1,0 +1,10 @@
+<p-menubar [model]="items">
+  <div class="flex h-12 py-2 items-center gap-2">
+    <i class="pi pi-moon"></i>
+    <p-toggleswitch
+      [ngModel]="isLightMode()"
+      (onChange)="themeModeChanged($event)"
+    />
+    <i class="pi pi-sun"></i>
+  </div>
+</p-menubar>
