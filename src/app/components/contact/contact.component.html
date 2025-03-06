@@ -12,10 +12,13 @@
       class="w-full"
     />
     <label for="name">Name</label>
-    @if (contactForm.get("name")?.hasError("required")) {
-      <p-message severity="error" variant="simple" size="small"
-        >Name is required!</p-message
-      >
+    @let nameForm = contactForm.get("name");
+    @if (nameForm?.touched) {
+      @if (contactForm.get("name")?.hasError("required")) {
+        <p-message severity="error" variant="simple" size="small"
+          >Name is required!</p-message
+        >
+      }
     }
   </p-floatlabel>
 
@@ -28,15 +31,18 @@
       class="w-full"
     />
     <label for="email">E-Mail</label>
-    @if (contactForm.get("email")?.hasError("email")) {
-      <p-message severity="error" variant="simple" size="small"
-        >Email must be valid!</p-message
-      >
-    }
-    @if (contactForm.get("email")?.hasError("required")) {
-      <p-message severity="error" variant="simple" size="small"
-        >E-Mail is required!</p-message
-      >
+    @let emailForm = contactForm.get("email");
+    @if (emailForm?.touched) {
+      @if (emailForm?.hasError("email")) {
+        <p-message severity="error" variant="simple" size="small"
+          >Email must be valid!</p-message
+        >
+      }
+      @if (emailForm?.hasError("required")) {
+        <p-message severity="error" variant="simple" size="small"
+          >E-Mail is required!</p-message
+        >
+      }
     }
   </p-floatlabel>
 
@@ -52,14 +58,15 @@
     ></textarea>
     <label for="message_label">Message</label>
 
-    @if (contactForm.get("message")?.hasError("required")) {
-      <p-message severity="error" variant="simple" size="small"
-        >Message is required!</p-message
-      >
+    @let messageForm = contactForm.get("message");
+    @if (messageForm?.touched) {
+      @if (contactForm.get("message")?.hasError("required")) {
+        <p-message severity="error" variant="simple" size="small"
+          >Message is required!</p-message
+        >
+      }
     }
   </p-floatlabel>
 
   <p-button label="Send" type="submit" [disabled]="!contactForm.valid" />
-
-  {{ contactForm.status }}
 </form>
