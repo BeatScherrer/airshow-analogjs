@@ -1,10 +1,36 @@
 <p-menubar [model]="items">
-  <div class="flex h-12 py-2 items-center gap-2">
-    <i class="pi pi-moon"></i>
-    <p-toggleswitch
-      [ngModel]="isLightMode()"
-      (onChange)="themeModeChanged($event)"
+  <ng-template #start>
+    <img
+      src="https://mt-robot.ch/wp-content/themes/mt-robot/assets/images/logos/logo@2x.png"
+      alt="MT-Robot AG Logo"
     />
-    <i class="pi pi-sun"></i>
-  </div>
+  </ng-template>
+  <ng-template #item let-item let-root="root">
+    <a pRipple class="flex items-center p-menubar-item-link">
+      <span>{{ item.label }}</span>
+      <span
+        *ngIf="item.shortcut"
+        class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1"
+        >{{ item.shortcut }}</span
+      >
+      <i
+        *ngIf="item.items"
+        [ngClass]="['ml-auto pi', root ? 'pi-angle-down' : 'pi-angle-right']"
+      ></i>
+    </a>
+  </ng-template>
+  <ng-template #end>
+    <div class="flex items-center gap-2">
+      <!-- TODO: add search? -->
+      <!-- <input type="text" pInputText placeholder="Search" class="w-36" /> -->
+      <div class="flex h-12 py-2 items-center gap-2">
+        <i class="pi pi-moon"></i>
+        <p-toggleswitch
+          [ngModel]="isLightMode()"
+          (onChange)="themeModeChanged($event)"
+        />
+        <i class="pi pi-sun"></i>
+      </div>
+    </div>
+  </ng-template>
 </p-menubar>

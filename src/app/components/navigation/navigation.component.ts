@@ -9,10 +9,11 @@ import {
   ToggleSwitchModule,
 } from "primeng/toggleswitch";
 import { map } from "rxjs/operators";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-navigation",
-  imports: [ToggleSwitchModule, MenubarModule, FormsModule],
+  imports: [ToggleSwitchModule, MenubarModule, FormsModule, CommonModule],
   templateUrl: "./navigation.component.html",
   styleUrl: "./navigation.component.css",
 })
@@ -28,39 +29,49 @@ export class NavigationComponent {
 
   items = [
     {
-      label: "Router",
-      icon: "pi pi-palette",
-      items: [
-        {
-          label: "Installation",
-          route: "/installation",
-        },
-        {
-          label: "Configuration",
-          route: "/configuration",
-        },
-      ],
+      label: "Home",
+      icon: "pi pi-home",
+      command: () => {
+        this.router.navigate(["/"]);
+      },
     },
     {
-      label: "Programmatic",
-      icon: "pi pi-link",
+      label: "About",
+      icon: "pi pi-home",
+      command: () => {
+        this.router.navigate(["/about"]);
+      },
+      // items: [
+      //   {
+      //     label: "Installation",
+      //     route: "/installation",
+      //   },
+      //   {
+      //     label: "Configuration",
+      //     route: "/configuration",
+      //   },
+      // ],
+    },
+    {
+      label: "Software",
+      icon: "pi pi-code",
       command: () => {
         this.router.navigate(["/installation"]);
       },
     },
     {
-      label: "External",
-      icon: "pi pi-home",
-      items: [
-        {
-          label: "Angular",
-          url: "https://angular.io/",
-        },
-        {
-          label: "Vite.js",
-          url: "https://vitejs.dev/",
-        },
-      ],
+      label: "Healthcare",
+      icon: "pi pi-wave-pulse",
+      command: () => {
+        this.router.navigate(["/healthcare"]);
+      },
+    },
+    {
+      label: "Career",
+      icon: "pi pi-briefcase",
+      command: () => {
+        this.router.navigate(["/career"]);
+      },
     },
   ];
 
