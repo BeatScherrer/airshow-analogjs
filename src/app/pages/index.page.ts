@@ -4,6 +4,8 @@ import { NavigationComponent } from "@components/navigation/navigation.component
 import { FooterComponent } from "@components/footer/footer.component";
 import { ContactComponent } from "@components/contact/contact.component";
 import { NotificationsComponent } from "@components/notifications/notifications.component";
+import { YouTubePlayer } from "@angular/youtube-player";
+import { MapComponent } from "@components/map/map.component";
 
 @Component({
   selector: "app-home",
@@ -14,6 +16,8 @@ import { NotificationsComponent } from "@components/notifications/notifications.
     FooterComponent,
     ContactComponent,
     NotificationsComponent,
+    YouTubePlayer,
+    MapComponent,
   ],
   templateUrl: "./index.page.html",
 })
