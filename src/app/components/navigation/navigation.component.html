@@ -7,6 +7,7 @@
   </ng-template>
   <ng-template #item let-item let-root="root">
     <a pRipple class="flex items-center p-menubar-item-link">
+      <i [ngClass]="item.icon"></i>
       <span>{{ item.label }}</span>
       <span
         *ngIf="item.shortcut"
