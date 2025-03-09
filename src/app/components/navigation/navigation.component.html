@@ -1,9 +1,10 @@
 <p-menubar [model]="items">
   <ng-template #start>
-    <img
-      src="https://mt-robot.ch/wp-content/themes/mt-robot/assets/images/logos/logo@2x.png"
-      alt="MT-Robot AG Logo"
-    />
+    @if (isLightMode()) {
+      <img src="/mt_robot_logo.svg" alt="MT-Robot AG Logo" class="h-24" />
+    } @else {
+      <img src="/mt_robot_logo_dark.svg" alt="MT-Robot AG Logo" class="h-24" />
+    }
   </ng-template>
   <ng-template #item let-item let-root="root">
     <a pRipple class="flex items-center p-menubar-item-link">

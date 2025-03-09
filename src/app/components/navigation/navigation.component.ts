@@ -56,7 +56,7 @@ export class NavigationComponent {
       label: "Software",
       icon: "pi pi-code",
       command: () => {
-        this.router.navigate(["/installation"]);
+        this.router.navigate(["/software"]);
       },
     },
     {
