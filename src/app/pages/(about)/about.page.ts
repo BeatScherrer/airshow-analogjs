@@ -7,6 +7,5 @@ import { NavigationComponent } from "@components/navigation/navigation.component
   selector: "app-about",
   imports: [ContactComponent, FooterComponent, NavigationComponent],
   templateUrl: "./about.page.html",
-  styleUrl: "./about.page.css",
 })
 export default class AboutComponent {}
