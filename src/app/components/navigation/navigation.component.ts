@@ -1,7 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { toSignal } from "@angular/core/rxjs-interop";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { AppStateService, ThemeMode } from "@services/app-state.service";
 import { MenubarModule } from "primeng/menubar";
 import {
@@ -13,7 +13,13 @@ import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-navigation",
-  imports: [ToggleSwitchModule, MenubarModule, FormsModule, CommonModule],
+  imports: [
+    ToggleSwitchModule,
+    MenubarModule,
+    FormsModule,
+    CommonModule,
+    RouterLink,
+  ],
   templateUrl: "./navigation.component.html",
   styleUrl: "./navigation.component.css",
 })

@@ -1,10 +1,16 @@
 <p-menubar [model]="items">
   <ng-template #start>
-    @if (isLightMode()) {
-      <img src="/mt_robot_logo.svg" alt="MT-Robot AG Logo" class="h-24" />
-    } @else {
-      <img src="/mt_robot_logo_dark.svg" alt="MT-Robot AG Logo" class="h-24" />
-    }
+    <a routerLink="/">
+      @if (isLightMode()) {
+        <img src="/mt_robot_logo.svg" alt="MT-Robot AG Logo" class="h-24" />
+      } @else {
+        <img
+          src="/mt_robot_logo_dark.svg"
+          alt="MT-Robot AG Logo"
+          class="h-24"
+        />
+      }
+    </a>
   </ng-template>
   <ng-template #item let-item let-root="root">
     <a pRipple class="flex items-center p-menubar-item-link">
