@@ -40,6 +40,7 @@
             # LSPs
             vscode-langservers-extracted
             typescript-language-server
+            tailwindcss-language-server
             nodePackages.prettier
             nodePackages.vscode-langservers-extracted
             emmet-ls
