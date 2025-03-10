@@ -8,6 +8,14 @@
 
 <app-hero />
 
+<div class="flex flex-row justify-center">
+  @if (isLightMode()) {
+  <img src="/mockup/mockup_light.png" class="contain" />
+  } @else {
+  <img src="/mockup/mockup_dark.png" class="contain" />
+  }
+</div>
+
 <div class="flex flex-row justify-center p-10 overflow-hidden">
   <youtube-player videoId="u1lC7ffurvs" />
 </div>
