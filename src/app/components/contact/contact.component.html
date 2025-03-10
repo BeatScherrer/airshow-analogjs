@@ -1,96 +1,96 @@
-<div class="flex flex-col gap-5 justify-center">
-  <h1>Contact</h1>
+<p-card header="Contact">
+  <div class="flex flex-col gap-5 justify-center">
+    <div class="flex flex-wrap gap-10 p-4 justify-center">
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-col items-start">
+          <span>MT Robot AG</span>
+          <span>Brislachstrasse 25</span>
+          <span>CH-4226 Breitenbach</span>
+        </div>
 
-  <div class="flex flex-wrap gap-10 p-4 justify-center">
-    <div class="flex flex-col gap-8">
-      <div class="flex flex-col items-start">
-        <span>MT Robot AG</span>
-        <span>Brislachstrasse 25</span>
-        <span>CH-4226 Breitenbach</span>
+        <div class="flex flex-col items-start">
+          <span><i class="pi pi-phone"></i> +41 61 775 20 20</span>
+          <span>
+            <a href="mailto:contact@mt-robot.com">
+              <i class="pi pi-envelope"></i>
+              contact&#64;mt-robot.com</a
+            ></span
+          >
+        </div>
       </div>
 
-      <div class="flex flex-col items-start">
-        <span><i class="pi pi-phone"></i> +41 61 775 20 20</span>
-        <span>
-          <a href="mailto:contact@mt-robot.com">
-            <i class="pi pi-envelope"></i>
-            contact&#64;mt-robot.com</a
-          ></span
-        >
-      </div>
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        class="flex flex-col gap-8"
+      >
+        <p-floatlabel>
+          <input
+            type="text"
+            pInputText
+            formControlName="name"
+            id="name"
+            class="w-full"
+          />
+          <label for="name">Name</label>
+          @let nameForm = contactForm.get("name");
+          @if (nameForm?.touched) {
+            @if (contactForm.get("name")?.hasError("required")) {
+              <p-message severity="error" variant="simple" size="small"
+                >Name is required!</p-message
+              >
+            }
+          }
+        </p-floatlabel>
+
+        <p-floatlabel>
+          <input
+            type="text"
+            pInputText
+            formControlName="email"
+            id="email"
+            class="w-full"
+          />
+          <label for="email">E-Mail</label>
+          @let emailForm = contactForm.get("email");
+          @if (emailForm?.touched) {
+            @if (emailForm?.hasError("email")) {
+              <p-message severity="error" variant="simple" size="small"
+                >Email must be valid!</p-message
+              >
+            }
+            @if (emailForm?.hasError("required")) {
+              <p-message severity="error" variant="simple" size="small"
+                >E-Mail is required!</p-message
+              >
+            }
+          }
+        </p-floatlabel>
+
+        <p-floatlabel>
+          <textarea
+            id="message_label"
+            rows="5"
+            cols="30"
+            pTextarea
+            formControlName="message"
+            style="resize: none"
+            class="w-full"
+          ></textarea>
+          <label for="message_label">Message</label>
+
+          @let messageForm = contactForm.get("message");
+          @if (messageForm?.touched) {
+            @if (contactForm.get("message")?.hasError("required")) {
+              <p-message severity="error" variant="simple" size="small"
+                >Message is required!</p-message
+              >
+            }
+          }
+        </p-floatlabel>
+
+        <p-button label="Send" type="submit" [disabled]="!contactForm.valid" />
+      </form>
     </div>
-
-    <form
-      [formGroup]="contactForm"
-      (ngSubmit)="onSubmit()"
-      class="flex flex-col gap-8"
-    >
-      <p-floatlabel>
-        <input
-          type="text"
-          pInputText
-          formControlName="name"
-          id="name"
-          class="w-full"
-        />
-        <label for="name">Name</label>
-        @let nameForm = contactForm.get("name");
-        @if (nameForm?.touched) {
-          @if (contactForm.get("name")?.hasError("required")) {
-            <p-message severity="error" variant="simple" size="small"
-              >Name is required!</p-message
-            >
-          }
-        }
-      </p-floatlabel>
-
-      <p-floatlabel>
-        <input
-          type="text"
-          pInputText
-          formControlName="email"
-          id="email"
-          class="w-full"
-        />
-        <label for="email">E-Mail</label>
-        @let emailForm = contactForm.get("email");
-        @if (emailForm?.touched) {
-          @if (emailForm?.hasError("email")) {
-            <p-message severity="error" variant="simple" size="small"
-              >Email must be valid!</p-message
-            >
-          }
-          @if (emailForm?.hasError("required")) {
-            <p-message severity="error" variant="simple" size="small"
-              >E-Mail is required!</p-message
-            >
-          }
-        }
-      </p-floatlabel>
-
-      <p-floatlabel>
-        <textarea
-          id="message_label"
-          rows="5"
-          cols="30"
-          pTextarea
-          formControlName="message"
-          style="resize: none"
-          class="w-full"
-        ></textarea>
-        <label for="message_label">Message</label>
-
-        @let messageForm = contactForm.get("message");
-        @if (messageForm?.touched) {
-          @if (contactForm.get("message")?.hasError("required")) {
-            <p-message severity="error" variant="simple" size="small"
-              >Message is required!</p-message
-            >
-          }
-        }
-      </p-floatlabel>
-
-      <p-button label="Send" type="submit" [disabled]="!contactForm.valid" />
-    </form>
   </div>
-</div>
+</p-card>
