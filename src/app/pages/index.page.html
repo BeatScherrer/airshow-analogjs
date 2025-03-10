@@ -8,16 +8,27 @@
 
 <app-hero />
 
-<div class="flex flex-row justify-center">
-  @if (isLightMode()) {
-  <img src="/mockup/mockup_light.png" class="contain" />
-  } @else {
-  <img src="/mockup/mockup_dark.png" class="contain" />
-  }
+<!-- TODO: add component -->
+<div class="flex flex-col gap-8 mt-32">
+  <div class="text-4xl font-semibold">Intuitive Web Application</div>
+  <p>Responsive and modern user interface optimized for various devices</p>
+  <div class="flex flex-row justify-center">
+    @if (isLightMode()) {
+    <img src="/mockup/mockup_light.png" class="contain" />
+    } @else {
+    <img src="/mockup/mockup_dark.png" class="contain" />
+    }
+  </div>
 </div>
 
-<div class="flex flex-row justify-center p-10 overflow-hidden">
-  <youtube-player videoId="u1lC7ffurvs" />
+<!-- TODO: add component -->
+<div class="flex flex-row justify-center overflow-hidden -mt-32 mb-64">
+  <youtube-player
+    videoId="u1lC7ffurvs"
+    placeholderImageQuality="high"
+    [width]="1500"
+    [height]="600"
+  />
 </div>
 
 <app-contact />
