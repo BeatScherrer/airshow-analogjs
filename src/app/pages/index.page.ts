@@ -1,4 +1,10 @@
-import { Component, inject, signal } from "@angular/core";
+import {
+  Component,
+  computed,
+  HostListener,
+  inject,
+  signal,
+} from "@angular/core";
 import { NavigationComponent } from "@components/navigation/navigation.component";
 import { FooterComponent } from "@components/footer/footer.component";
 import { ContactComponent } from "@components/contact/contact.component";
@@ -26,10 +32,29 @@ import { AppStateService, ThemeMode } from "@services/app-state.service";
 })
 export default class HomeComponent {
   appStateService = inject(AppStateService);
+  screenHeight = signal(0);
+  screenWidth = signal(0);
+  videoWidth = computed(() => Math.round(this.screenWidth() * 0.9));
 
   isLightMode = toSignal(
     this.appStateService
       .getThemeMode()
       .pipe(map((mode) => mode === ThemeMode.LIGHT)),
   );
+
+  constructor() {
+    this.getScreenSize();
+  }
+
+  @HostListener("window:resize", ["$event"])
+  getScreenSize(event?: any) {
+    this.screenWidth.set(window.innerWidth);
+    this.screenHeight.set(window.innerHeight);
+    console.log(
+      "width: ",
+      this.screenWidth(),
+      " height: ",
+      this.screenHeight(),
+    );
+  }
 }
