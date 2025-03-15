@@ -2,4 +2,4 @@ default:
   just -l
 
 dev:
-    pnpm start
+    pnpm start --host
