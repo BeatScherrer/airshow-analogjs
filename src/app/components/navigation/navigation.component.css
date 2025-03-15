@@ -1,0 +1,6 @@
+/* NOTE: Requires ng-deep and important. There is no design token for the border width */
+::ng-deep .p-menubar {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: none !important;
+}
