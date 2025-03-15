@@ -50,11 +50,5 @@ export default class HomeComponent {
   getScreenSize(event?: any) {
     this.screenWidth.set(window.innerWidth);
     this.screenHeight.set(window.innerHeight);
-    console.log(
-      "width: ",
-      this.screenWidth(),
-      " height: ",
-      this.screenHeight(),
-    );
   }
 }
