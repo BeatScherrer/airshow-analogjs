@@ -15,6 +15,7 @@ import { HeroComponent } from "@components/hero/hero.component";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { map } from "rxjs/operators";
 import { AppStateService, ThemeMode } from "@services/app-state.service";
+import { HighlightComponent } from "@components/highlight/highlight.component";
 
 @Component({
   selector: "app-home",
@@ -27,6 +28,7 @@ import { AppStateService, ThemeMode } from "@services/app-state.service";
     YouTubePlayer,
     MapComponent,
     HeroComponent,
+    HighlightComponent,
   ],
   templateUrl: "./index.page.html",
 })

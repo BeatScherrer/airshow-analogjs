@@ -1,24 +1,11 @@
 <!-- <app-notifications /> -->
 <app-navigation />
 
-<!-- <img -->
-<!--   src="https://mt-robot.ch/wp-content/themes/mt-robot/assets/images/logos/logo@2x.png" -->
-<!--   alt="MT-Robot AG Logo" -->
-<!-- /> -->
-
 <app-hero />
 
 <!-- TODO: add component -->
 <div class="flex flex-col gap-8 mt-32">
-  <div class="text-4xl font-semibold">Intuitive Web Application</div>
-  <p>Responsive and modern user interface optimized for various devices</p>
-  <div class="flex flex-row justify-center">
-    @if (isLightMode()) {
-    <img src="/mockup/mockup_light.png" class="contain" />
-    } @else {
-    <img src="/mockup/mockup_dark.png" class="contain" />
-    }
-  </div>
+  <app-highlight />
 
   <!-- TODO: add component -->
   <div class="flex flex-row justify-center overflow-hidden -mt-10 mb-64">
