@@ -35,6 +35,13 @@ export class NavigationComponent {
 
   items = [
     {
+      label: "Landing",
+      icon: "pi pi-sparkles",
+      command: () => {
+        this.router.navigate(["/landing"]);
+      },
+    },
+    {
       label: "Home",
       icon: "pi pi-home",
       command: () => {
@@ -70,6 +77,13 @@ export class NavigationComponent {
       icon: "pi pi-wave-pulse",
       command: () => {
         this.router.navigate(["/healthcare"]);
+      },
+    },
+    {
+      label: "Sandbox",
+      icon: "pi pi-palette",
+      command: () => {
+        this.router.navigate(["/sandbox"]);
       },
     },
     // {

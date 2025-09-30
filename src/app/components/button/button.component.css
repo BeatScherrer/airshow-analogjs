@@ -1,0 +1,206 @@
+/* Base button styles */
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 200ms ease-in-out;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+}
+
+.button-element {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: inherit;
+  border-radius: inherit;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* Size variants */
+:host(.app-button--small) .button-element {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  min-height: 2rem;
+}
+
+:host(.app-button--medium) .button-element {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  min-height: 2.5rem;
+}
+
+:host(.app-button--large) .button-element {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  min-height: 3rem;
+}
+
+/* Filled variants */
+:host(.app-button--filled.app-button--primary) .button-element {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+:host(.app-button--filled.app-button--primary):hover .button-element {
+  background: linear-gradient(to right, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+}
+
+:host(.app-button--filled.app-button--secondary) .button-element {
+  background: #6b7280;
+  color: white;
+  box-shadow: 0 4px 8px rgba(107, 114, 128, 0.3);
+}
+
+:host(.app-button--filled.app-button--secondary):hover .button-element {
+  background: #4b5563;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(107, 114, 128, 0.4);
+}
+
+:host(.app-button--filled.app-button--white) .button-element {
+  background: white;
+  color: #ef4444;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+:host(.app-button--filled.app-button--white):hover .button-element {
+  background: #f9fafb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient variant */
+:host(.app-button--gradient) .button-element {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+:host(.app-button--gradient):hover .button-element {
+  background: linear-gradient(to right, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Outlined variants */
+:host(.app-button--outlined.app-button--primary) .button-element {
+  background: transparent;
+  color: #ef4444;
+  border: 2px solid #ef4444;
+}
+
+:host(.app-button--outlined.app-button--primary):hover .button-element {
+  background: #ef4444;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+:host(.app-button--outlined.app-button--white) .button-element {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+:host(.app-button--outlined.app-button--white):hover .button-element {
+  background: white;
+  color: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+:host(.app-button--outlined.app-button--secondary) .button-element {
+  background: transparent;
+  color: #6b7280;
+  border: 2px solid #6b7280;
+}
+
+:host(.app-button--outlined.app-button--secondary):hover .button-element {
+  background: #6b7280;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(107, 114, 128, 0.3);
+}
+
+/* Text variants */
+:host(.app-button--text) .button-element {
+  background: transparent;
+  color: #ef4444;
+  padding: 0.5rem 1rem;
+}
+
+:host(.app-button--text):hover .button-element {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+:host(.app-button--text.app-button--white) .button-element {
+  color: white;
+}
+
+:host(.app-button--text.app-button--white):hover .button-element {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* States */
+:host(.app-button--disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+:host(.app-button--loading) {
+  cursor: not-allowed;
+}
+
+:host(.app-button--full-width) {
+  width: 100%;
+}
+
+/* Icons */
+.button-icon {
+  font-size: 1em;
+}
+
+/* Loading spinner */
+.button-spinner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-content--hidden {
+  visibility: hidden;
+}
+
+/* Focus styles */
+:host(:focus-visible) .button-element {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
+}
+
+/* Active state */
+:host(:active) .button-element {
+  transform: translateY(0);
+}

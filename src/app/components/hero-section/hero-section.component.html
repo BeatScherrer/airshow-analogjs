@@ -1,0 +1,49 @@
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-red-900 to-gray-800 overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25px 25px, rgba(255,255,255,0.3) 2px, transparent 0); background-size: 50px 50px;"></div>
+  </div>
+  
+  <!-- Floating Elements -->
+  <div class="absolute top-20 left-10 w-32 h-32 bg-red-500 rounded-full opacity-20 animate-bounce" style="animation-delay: 0s; animation-duration: 6s;"></div>
+  <div class="absolute bottom-20 right-10 w-24 h-24 bg-red-600 rounded-full opacity-20 animate-bounce" style="animation-delay: 2s; animation-duration: 8s;"></div>
+  <div class="absolute top-1/2 right-20 w-16 h-16 bg-red-700 rounded-full opacity-20 animate-bounce" style="animation-delay: 4s; animation-duration: 7s;"></div>
+
+  <div class="container mx-auto px-6 text-center text-white relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-6xl md:text-7xl font-bold mb-8 leading-tight">
+        The Future of
+        <span class="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+          Autonomous Robotics
+        </span>
+      </h1>
+      <p class="text-xl md:text-2xl mb-12 text-gray-300 leading-relaxed">
+        Revolutionizing industries with intelligent, adaptive robotic solutions that deliver unprecedented precision and efficiency.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <app-button 
+          variant="gradient" 
+          color="primary" 
+          size="large"
+          icon="pi pi-arrow-right"
+          iconPosition="right">
+          Start Your Journey
+        </app-button>
+        <app-button 
+          variant="outlined" 
+          color="white" 
+          size="large"
+          icon="pi pi-play"
+          iconPosition="left">
+          Watch Demo
+        </app-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+    <i class="pi pi-chevron-down text-2xl"></i>
+  </div>
+</section>

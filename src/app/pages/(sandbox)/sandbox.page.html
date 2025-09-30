@@ -1,0 +1,362 @@
+<app-navigation />
+
+<div class="min-h-screen bg-gray-50 py-12">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Button Component Sandbox</h1>
+      <p class="text-xl text-gray-600">Comprehensive showcase of all button variants, colors, and states</p>
+    </div>
+
+    <!-- Basic Variants -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">Button Variants</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Filled Buttons -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Filled</h3>
+          <div class="space-y-4">
+            <app-button variant="filled" color="primary" (click)="onButtonClick('Filled Primary')">
+              Primary
+            </app-button>
+            <app-button variant="filled" color="secondary" (click)="onButtonClick('Filled Secondary')">
+              Secondary
+            </app-button>
+            <app-button variant="filled" color="white" (click)="onButtonClick('Filled White')">
+              White
+            </app-button>
+          </div>
+        </div>
+
+        <!-- Outlined Buttons -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Outlined</h3>
+          <div class="space-y-4">
+            <app-button variant="outlined" color="primary" (click)="onButtonClick('Outlined Primary')">
+              Primary
+            </app-button>
+            <app-button variant="outlined" color="secondary" (click)="onButtonClick('Outlined Secondary')">
+              Secondary
+            </app-button>
+            <app-button variant="outlined" color="white" (click)="onButtonClick('Outlined White')">
+              White
+            </app-button>
+          </div>
+        </div>
+
+        <!-- Text Buttons -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Text</h3>
+          <div class="space-y-4">
+            <app-button variant="text" color="primary" (click)="onButtonClick('Text Primary')">
+              Primary
+            </app-button>
+            <app-button variant="text" color="secondary" (click)="onButtonClick('Text Secondary')">
+              Secondary
+            </app-button>
+            <app-button variant="text" color="white" (click)="onButtonClick('Text White')">
+              White
+            </app-button>
+          </div>
+        </div>
+
+        <!-- Gradient Buttons -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Gradient</h3>
+          <div class="space-y-4">
+            <app-button variant="gradient" color="primary" (click)="onButtonClick('Gradient Primary')">
+              Gradient
+            </app-button>
+            <app-button variant="gradient" color="secondary" (click)="onButtonClick('Gradient Secondary')">
+              Gradient
+            </app-button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sizes -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">Button Sizes</h2>
+      
+      <div class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="flex flex-wrap items-center gap-4">
+          <app-button variant="filled" color="primary" size="small" (click)="onButtonClick('Small Button')">
+            Small
+          </app-button>
+          <app-button variant="filled" color="primary" size="medium" (click)="onButtonClick('Medium Button')">
+            Medium
+          </app-button>
+          <app-button variant="filled" color="primary" size="large" (click)="onButtonClick('Large Button')">
+            Large
+          </app-button>
+        </div>
+      </div>
+    </section>
+
+    <!-- With Icons -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">Buttons with Icons</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Left Icons -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Left Icons</h3>
+          <div class="space-y-4">
+            <app-button 
+              variant="filled" 
+              color="primary" 
+              icon="pi pi-plus" 
+              iconPosition="left"
+              (click)="onButtonClick('Add Button')">
+              Add Item
+            </app-button>
+            <app-button 
+              variant="outlined" 
+              color="primary" 
+              icon="pi pi-download" 
+              iconPosition="left"
+              (click)="onButtonClick('Download Button')">
+              Download
+            </app-button>
+            <app-button 
+              variant="text" 
+              color="primary" 
+              icon="pi pi-info-circle" 
+              iconPosition="left"
+              (click)="onButtonClick('Info Button')">
+              Learn More
+            </app-button>
+          </div>
+        </div>
+
+        <!-- Right Icons -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Right Icons</h3>
+          <div class="space-y-4">
+            <app-button 
+              variant="filled" 
+              color="primary" 
+              icon="pi pi-arrow-right" 
+              iconPosition="right"
+              (click)="onButtonClick('Next Button')">
+              Next Step
+            </app-button>
+            <app-button 
+              variant="outlined" 
+              color="primary" 
+              icon="pi pi-external-link" 
+              iconPosition="right"
+              (click)="onButtonClick('External Button')">
+              Open Link
+            </app-button>
+            <app-button 
+              variant="gradient" 
+              color="primary" 
+              icon="pi pi-send" 
+              iconPosition="right"
+              (click)="onButtonClick('Send Button')">
+              Send Message
+            </app-button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- States -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">Button States</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Loading States -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Loading</h3>
+          <div class="space-y-4">
+            <app-button 
+              variant="filled" 
+              color="primary" 
+              [loading]="loading"
+              (click)="toggleLoading()">
+              @if (loading) { Loading... } @else { Click to Load }
+            </app-button>
+            <app-button 
+              variant="outlined" 
+              color="primary" 
+              [loading]="loading"
+              icon="pi pi-refresh"
+              iconPosition="left">
+              Refresh Data
+            </app-button>
+          </div>
+        </div>
+
+        <!-- Disabled States -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Disabled</h3>
+          <div class="space-y-4">
+            <app-button 
+              variant="filled" 
+              color="primary" 
+              [disabled]="true">
+              Disabled Filled
+            </app-button>
+            <app-button 
+              variant="outlined" 
+              color="primary" 
+              [disabled]="true"
+              icon="pi pi-lock"
+              iconPosition="left">
+              Disabled Outlined
+            </app-button>
+          </div>
+        </div>
+
+        <!-- Full Width -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Full Width</h3>
+          <div class="space-y-4">
+            <app-button 
+              variant="filled" 
+              color="primary" 
+              [fullWidth]="true"
+              (click)="onButtonClick('Full Width Button')">
+              Full Width Button
+            </app-button>
+            <app-button 
+              variant="outlined" 
+              color="primary" 
+              [fullWidth]="true"
+              icon="pi pi-check"
+              iconPosition="left">
+              Full Width with Icon
+            </app-button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dark Background Preview -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">Dark Background Preview</h2>
+      
+      <div class="bg-gradient-to-br from-gray-900 via-red-900 to-gray-800 p-8 rounded-lg">
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-bold text-white mb-4">Hero Section Style</h3>
+          <p class="text-gray-300">Preview how buttons look on dark backgrounds</p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+          <app-button 
+            variant="gradient" 
+            color="primary" 
+            size="large"
+            icon="pi pi-arrow-right"
+            iconPosition="right"
+            (click)="onButtonClick('Hero Primary')">
+            Start Your Journey
+          </app-button>
+          <app-button 
+            variant="outlined" 
+            color="white" 
+            size="large"
+            icon="pi pi-play"
+            iconPosition="left"
+            (click)="onButtonClick('Hero Secondary')">
+            Watch Demo
+          </app-button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Examples -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">Common Usage Examples</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Actions -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Actions</h3>
+          <div class="space-y-4">
+            <app-button 
+              variant="filled" 
+              color="primary" 
+              icon="pi pi-save"
+              iconPosition="left">
+              Save Changes
+            </app-button>
+            <app-button 
+              variant="outlined" 
+              color="secondary" 
+              icon="pi pi-times">
+              Cancel
+            </app-button>
+            <app-button 
+              variant="text" 
+              color="primary" 
+              icon="pi pi-trash"
+              iconPosition="left">
+              Delete
+            </app-button>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Navigation</h3>
+          <div class="space-y-4">
+            <app-button 
+              variant="outlined" 
+              color="primary" 
+              icon="pi pi-arrow-left"
+              iconPosition="left">
+              Back
+            </app-button>
+            <app-button 
+              variant="filled" 
+              color="primary" 
+              icon="pi pi-arrow-right"
+              iconPosition="right">
+              Continue
+            </app-button>
+            <app-button 
+              variant="gradient" 
+              color="primary" 
+              [fullWidth]="true">
+              Get Started
+            </app-button>
+          </div>
+        </div>
+
+        <!-- Social/Contact -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-gray-700">Contact</h3>
+          <div class="space-y-4">
+            <app-button 
+              variant="filled" 
+              color="primary" 
+              icon="pi pi-calendar"
+              iconPosition="left">
+              Schedule Demo
+            </app-button>
+            <app-button 
+              variant="outlined" 
+              color="primary" 
+              icon="pi pi-phone"
+              iconPosition="left">
+              Call Us
+            </app-button>
+            <app-button 
+              variant="text" 
+              color="primary" 
+              icon="pi pi-envelope"
+              iconPosition="left">
+              Email Support
+            </app-button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<app-footer />

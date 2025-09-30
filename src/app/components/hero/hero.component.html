@@ -9,21 +9,25 @@
         own robot.
       </p>
 
-      <button
-        pButton
-        pRipple
-        label="Learn More"
-        type="button"
-        class="mr-3 p-button-raised"
-      ></button>
+      <div class="flex gap-4">
+        <app-button 
+          variant="filled" 
+          color="primary" 
+          size="medium"
+          icon="pi pi-info-circle"
+          iconPosition="left">
+          Learn More
+        </app-button>
 
-      <button
-        pButton
-        pRipple
-        label="Request a Demo"
-        type="button"
-        class="p-button-outlined"
-      ></button>
+        <app-button 
+          variant="outlined" 
+          color="primary" 
+          size="medium"
+          icon="pi pi-calendar"
+          iconPosition="left">
+          Request a Demo
+        </app-button>
+      </div>
     </section>
   </div>
 

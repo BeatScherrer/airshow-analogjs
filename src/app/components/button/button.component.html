@@ -1,0 +1,29 @@
+<button 
+  [type]="type"
+  [disabled]="disabled || loading"
+  [attr.aria-label]="ariaLabel"
+  (click)="onClick($event)"
+  class="button-element">
+  
+  <!-- Loading spinner -->
+  @if (loading) {
+    <span class="button-spinner">
+      <i class="pi pi-spin pi-spinner"></i>
+    </span>
+  }
+  
+  <!-- Left icon -->
+  @if (icon && iconPosition === 'left' && !loading) {
+    <i class="{{ icon }} button-icon button-icon--left"></i>
+  }
+  
+  <!-- Button content -->
+  <span class="button-content" [class.button-content--hidden]="loading">
+    <ng-content></ng-content>
+  </span>
+  
+  <!-- Right icon -->
+  @if (icon && iconPosition === 'right' && !loading) {
+    <i class="{{ icon }} button-icon button-icon--right"></i>
+  }
+</button>

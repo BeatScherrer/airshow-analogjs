@@ -1,12 +1,12 @@
 import { Component, inject } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { AppStateService, ThemeMode } from "@services/app-state.service";
-import { ButtonModule } from "primeng/button";
+import { ButtonComponent } from "@components/button/button.component";
 import { map } from "rxjs/operators";
 
 @Component({
   selector: "app-hero",
-  imports: [ButtonModule],
+  imports: [ButtonComponent],
   templateUrl: "./hero.component.html",
   styleUrl: "./hero.component.css",
 })
