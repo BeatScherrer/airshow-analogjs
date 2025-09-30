@@ -1,9 +1,9 @@
 <div 
   class="group p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105"
   [ngClass]="{
-    'bg-gradient-to-br from-gray-50 to-gray-100 hover:from-red-50 hover:to-red-100': variant === 'default',
-    'bg-gradient-to-br from-gray-900 via-red-900 to-gray-800 text-white': variant === 'large',
-    'bg-white border border-gray-200 hover:border-red-200': variant === 'media'
+    'bg-surface-card hover:bg-surface-hover border border-gray-200 dark:border-gray-700 hover:border-red-200 dark:hover:border-red-400': variant === 'default',
+    'bg-theme-gradient text-white': variant === 'large',
+    'bg-surface-card border border-gray-200 dark:border-gray-700 hover:border-red-200 dark:hover:border-red-400': variant === 'media'
   }"
 >
   <!-- Projected content takes priority -->
@@ -15,11 +15,11 @@
       <i class="{{ icon }} text-white text-2xl"></i>
     </div>
     <h3 class="text-xl font-bold mb-4" 
-        [ngClass]="variant === 'large' ? 'text-white' : 'text-gray-900'">
+        [ngClass]="variant === 'large' ? 'text-white' : 'text-surface'">
       {{ title }}
     </h3>
     <p class="leading-relaxed" 
-       [ngClass]="variant === 'large' ? 'text-gray-300' : 'text-gray-600'">
+       [ngClass]="variant === 'large' ? 'text-gray-300 dark:text-gray-400' : 'text-surface-secondary'">
       {{ description }}
     </p>
   }

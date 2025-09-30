@@ -3,6 +3,7 @@ import { NavigationComponent } from '@components/navigation/navigation.component
 import { FooterComponent } from '@components/footer/footer.component';
 import { ButtonComponent } from '@components/button/button.component';
 import { VideoPlayerComponent } from '@components/video-player/video-player.component';
+import { FeatureCardComponent } from '@components/feature-card/feature-card.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,6 +14,7 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     ButtonComponent,
     VideoPlayerComponent,
+    FeatureCardComponent,
     CommonModule,
   ],
   templateUrl: './sandbox.page.html',

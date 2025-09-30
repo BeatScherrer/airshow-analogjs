@@ -2,15 +2,21 @@ import { Component, OnDestroy, OnInit, HostListener } from "@angular/core";
 import { FooterComponent } from "@components/footer/footer.component";
 import { NavigationComponent } from "@components/navigation/navigation.component";
 import { VideoPlayerComponent } from "@components/video-player/video-player.component";
+import { FeatureCardComponent } from "@components/feature-card/feature-card.component";
 
 @Component({
   selector: "app-healthcare",
-  imports: [NavigationComponent, FooterComponent, VideoPlayerComponent],
+  imports: [
+    NavigationComponent,
+    FooterComponent,
+    VideoPlayerComponent,
+    FeatureCardComponent,
+  ],
   templateUrl: "./healthcare.page.html",
 })
 export default class HealthcareComponent implements OnInit, OnDestroy {
   videoPosition = 0;
-  videoSrc = "/clinic_mover/output.mp4";
+  videoSrc = "/clinic_mover/clinic_mover_elevator.webm";
   titleOpacity = 1;
   videoTransform = "translateY(0) scale(1)";
   private animationFrameId?: number;
@@ -43,7 +49,7 @@ export default class HealthcareComponent implements OnInit, OnDestroy {
 
     // Calculate scroll percentage (0-100)
     const scrollPercent = Math.min(
-      Math.max((scrollTop / documentHeight) * 100, 0),
+      Math.max((scrollTop / documentHeight) * 300, 0),
       100,
     );
 
@@ -56,7 +62,7 @@ export default class HealthcareComponent implements OnInit, OnDestroy {
     this.titleOpacity = Math.max(0, 1 - scrollPercent / fadeThreshold);
 
     // Calculate video transform (move up and scale on scroll)
-    const translateY = -scrollPercent * 3; // Move up 2px per scroll percent
+    const translateY = -scrollPercent * 2; // Move up 2px per scroll percent
     const scale = 1 + (scrollPercent / 100) * 0.5; // Scale from 1 to 1.5
     this.videoTransform = `translateY(${translateY}px) scale(${scale})`;
   }

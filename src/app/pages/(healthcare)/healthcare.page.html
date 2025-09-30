@@ -1,14 +1,14 @@
-<div class="bg-gray-50 h-screen flex flex-col">
+<div class="bg-hero h-screen flex flex-col">
   <app-navigation />
 
   <!-- Title section with fade effect -->
   <div class="flex-1 flex items-center justify-center">
     <div class="text-center px-6" [style.opacity]="titleOpacity">
-      <h1 class="text-6xl md:text-8xl font-bold text-gray-800 mb-6">
+      <h1 class="text-6xl md:text-8xl font-bold text-surface mb-6">
         Healthcare
         <span class="block text-red-600">Innovation</span>
       </h1>
-      <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto">
+      <p class="text-xl md:text-2xl text-surface-secondary max-w-2xl mx-auto">
         Transform your hospital bed logistics
       </p>
     </div>
@@ -37,62 +37,72 @@
   </div>
 </div>
 
-<div>
-  <img
-    src="/clinic_mover/perspective.png"
-    alt="Image"
-    class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
-  />
-  <img
-    src="/clinic_mover/perspective_bed.png"
-    alt="Image"
-    class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
-  />
-</div>
+<!-- Bed Mover Features Section -->
+<section class="py-20 bg-section">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold text-surface mb-6">Advanced Features</h2>
+      <p class="text-xl text-surface-secondary max-w-3xl mx-auto">
+        Discover the cutting-edge technology that makes our bed mover the most advanced healthcare logistics solution
+      </p>
+    </div>
 
-<!-- <div> -->
-<!--   <img -->
-<!--     src="/clinic_mover/safety_perspective.png" -->
-<!--     alt="Image" -->
-<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
-<!--   /> -->
-<!--   <img -->
-<!--     src="/clinic_mover/safety_perspective_bed.png" -->
-<!--     alt="Image" -->
-<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
-<!--   /> -->
-<!-- </div> -->
-<!-- <div> -->
-<!--   <img -->
-<!--     src="/clinic_mover/top.png" -->
-<!--     alt="Image" -->
-<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
-<!--   /> -->
-<!--   <img -->
-<!--     src="/clinic_mover/top_bed.png" -->
-<!--     alt="Image" -->
-<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
-<!--   /> -->
-<!-- </div> -->
-<!-- <div> -->
-<!--   <img -->
-<!--     src="/clinic_mover/safety_top.png" -->
-<!--     alt="Image" -->
-<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
-<!--   /> -->
-<!--   <img -->
-<!--     src="/clinic_mover/safety_top_bed.png" -->
-<!--     alt="Image" -->
-<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
-<!--   /> -->
-<!-- </div> -->
-<!-- <div> -->
-<!--   <img -->
-<!--     src="/clinic_mover/joystick.png" -->
-<!--     alt="Image" -->
-<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
-<!--   /> -->
-<!-- </div> -->
-<!-- Video Player Section -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Safety Fields -->
+      <app-feature-card variant="media">
+        <div slot="content">
+          <img src="/clinic_mover/safety_perspective.png" alt="Safety Fields" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Safety Fields</h3>
+          <p class="text-gray-600">Advanced safety sensors that create protective zones around the bed mover, automatically stopping movement when obstacles are detected.</p>
+        </div>
+      </app-feature-card>
+
+      <!-- Joystick Control -->
+      <app-feature-card variant="media">
+        <div slot="content">
+          <img src="/clinic_mover/joystick.png" alt="Joystick Control" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Joystick Control</h3>
+          <p class="text-gray-600">Intuitive manual control system allowing healthcare staff to precisely maneuver the bed mover when needed.</p>
+        </div>
+      </app-feature-card>
+
+      <!-- Elevator Navigation -->
+      <app-feature-card variant="media">
+        <div slot="content">
+          <img src="/clinic_mover/elevator.png" alt="Elevator Navigation" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Elevator Navigation</h3>
+          <p class="text-gray-600">Seamless integration with hospital elevator systems for autonomous multi-floor transportation.</p>
+        </div>
+      </app-feature-card>
+
+      <!-- Fixed Navigation -->
+      <app-feature-card variant="media">
+        <div slot="content">
+          <img src="/clinic_mover/top.png" alt="Fixed Navigation" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Fixed Navigation</h3>
+          <p class="text-gray-600">Predefined route system following established paths for consistent and reliable bed transport.</p>
+        </div>
+      </app-feature-card>
+
+      <!-- Free Navigation -->
+      <app-feature-card variant="media">
+        <div slot="content">
+          <img src="/clinic_mover/perspective.png" alt="Free Navigation" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Free Navigation</h3>
+          <p class="text-gray-600">Dynamic pathfinding technology that adapts to changing hospital environments and obstacles in real-time.</p>
+        </div>
+      </app-feature-card>
+
+      <!-- Bed Integration -->
+      <app-feature-card variant="media">
+        <div slot="content">
+          <img src="/clinic_mover/perspective_bed.png" alt="Bed Integration" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Bed Integration</h3>
+          <p class="text-gray-600">Universal bed coupling system compatible with standard hospital beds for secure transport.</p>
+        </div>
+      </app-feature-card>
+    </div>
+  </div>
+</section>
 
 <app-footer />

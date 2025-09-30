@@ -1,20 +1,20 @@
 <app-navigation />
 
-<div class="min-h-screen bg-gray-50 py-12">
+<div class="min-h-screen bg-section-alt py-12">
   <div class="container mx-auto px-6">
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Button Component Sandbox</h1>
-      <p class="text-xl text-gray-600">Comprehensive showcase of all button variants, colors, and states</p>
+      <h1 class="text-4xl font-bold text-surface mb-4">Button Component Sandbox</h1>
+      <p class="text-xl text-surface-secondary">Comprehensive showcase of all button variants, colors, and states</p>
     </div>
 
     <!-- Basic Variants -->
     <section class="mb-16">
-      <h2 class="text-2xl font-bold text-gray-800 mb-8">Button Variants</h2>
+      <h2 class="text-2xl font-bold text-surface mb-8">Button Variants</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Filled Buttons -->
-        <div class="bg-white p-6 rounded-lg shadow-sm">
-          <h3 class="text-lg font-semibold mb-4 text-gray-700">Filled</h3>
+        <div class="bg-surface-card p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-4 text-surface-secondary">Filled</h3>
           <div class="space-y-4">
             <app-button variant="filled" color="primary" (click)="onButtonClick('Filled Primary')">
               Primary
@@ -239,7 +239,7 @@
     <section class="mb-16">
       <h2 class="text-2xl font-bold text-gray-800 mb-8">Dark Background Preview</h2>
       
-      <div class="bg-gradient-to-br from-gray-900 via-red-900 to-gray-800 p-8 rounded-lg">
+      <div class="bg-gradient-to-br from-red-600 to-gray-900 p-8 rounded-lg">
         <div class="text-center mb-8">
           <h3 class="text-2xl font-bold text-white mb-4">Hero Section Style</h3>
           <p class="text-gray-300">Preview how buttons look on dark backgrounds</p>
@@ -354,6 +354,85 @@
             </app-button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Feature Card Examples -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">Feature Card Examples</h2>
+      <p class="text-gray-600 mb-8">Examples of using custom content projection with the FeatureCard component</p>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Media card example -->
+        <app-feature-card variant="media">
+          <div slot="content">
+            <img src="/clinic_mover/perspective.png" alt="Robot perspective" class="w-full h-40 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Advanced Robotics</h3>
+            <p class="text-gray-600">Custom content with images and flexible layout options.</p>
+          </div>
+        </app-feature-card>
+
+        <!-- Large variant with custom content -->
+        <app-feature-card variant="large">
+          <div slot="content">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="pi pi-star text-white text-3xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Premium Feature</h3>
+              <p class="text-gray-300 mb-6">Enhanced capabilities with premium styling and layout.</p>
+              <button class="bg-white text-red-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </app-feature-card>
+
+        <!-- Default with fallback content -->
+        <app-feature-card>
+          <div class="text-center">
+            <i class="pi pi-heart text-red-500 text-4xl mb-4 block"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Flexible Content</h3>
+            <p class="text-gray-600">Any content can be projected using ng-content.</p>
+          </div>
+        </app-feature-card>
+
+        <!-- Standard feature card -->
+        <app-feature-card
+          icon="pi pi-cog"
+          title="Standard Feature"
+          description="Example of using the component with props instead of content projection."
+          variant="default"
+        />
+
+        <!-- Media variant with different content -->
+        <app-feature-card variant="media">
+          <div slot="content">
+            <img src="/clinic_mover/joystick.png" alt="Joystick control" class="w-full h-40 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Control System</h3>
+            <p class="text-gray-600">Interactive control interface for precise operations.</p>
+            <div class="mt-4">
+              <app-button variant="outlined" color="primary" size="small">
+                View Details
+              </app-button>
+            </div>
+          </div>
+        </app-feature-card>
+
+        <!-- Large variant with different styling -->
+        <app-feature-card variant="large">
+          <div slot="content">
+            <div class="text-left">
+              <h3 class="text-2xl font-bold text-white mb-4">Innovation Hub</h3>
+              <p class="text-gray-300 mb-6">Explore cutting-edge technology and development practices.</p>
+              <div class="flex space-x-2">
+                <span class="px-3 py-1 bg-red-500 text-white text-sm rounded-full">AI</span>
+                <span class="px-3 py-1 bg-red-500 text-white text-sm rounded-full">Robotics</span>
+                <span class="px-3 py-1 bg-red-500 text-white text-sm rounded-full">IoT</span>
+              </div>
+            </div>
+          </div>
+        </app-feature-card>
       </div>
     </section>
   </div>
