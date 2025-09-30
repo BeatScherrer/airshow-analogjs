@@ -65,13 +65,13 @@ export class NavigationComponent {
       //   },
       // ],
     },
-    {
-      label: "Software",
-      icon: "pi pi-code",
-      command: () => {
-        this.router.navigate(["/software"]);
-      },
-    },
+    // {
+    //   label: "Software",
+    //   icon: "pi pi-code",
+    //   command: () => {
+    //     this.router.navigate(["/software"]);
+    //   },
+    // },
     {
       label: "Bed Mover",
       icon: "pi pi-wave-pulse",

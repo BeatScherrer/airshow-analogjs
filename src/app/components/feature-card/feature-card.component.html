@@ -1,0 +1,29 @@
+<div 
+  class="group p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105"
+  [ngClass]="{
+    'bg-gradient-to-br from-gray-50 to-gray-100 hover:from-red-50 hover:to-red-100': variant === 'default',
+    'bg-gradient-to-br from-gray-900 via-red-900 to-gray-800 text-white': variant === 'large',
+    'bg-white border border-gray-200 hover:border-red-200': variant === 'media'
+  }"
+>
+  <!-- Projected content takes priority -->
+  <ng-content select="[slot=content]"></ng-content>
+
+  <!-- Default content with icon (shown when no custom content) -->
+  @if (icon && title) {
+    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+      <i class="{{ icon }} text-white text-2xl"></i>
+    </div>
+    <h3 class="text-xl font-bold mb-4" 
+        [ngClass]="variant === 'large' ? 'text-white' : 'text-gray-900'">
+      {{ title }}
+    </h3>
+    <p class="leading-relaxed" 
+       [ngClass]="variant === 'large' ? 'text-gray-300' : 'text-gray-600'">
+      {{ description }}
+    </p>
+  }
+
+  <!-- General content projection (fallback) -->
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,45 @@
+:host {
+  display: block;
+}
+
+/* Media variant specific styles */
+.group[class*="bg-white"] {
+  position: relative;
+  overflow: hidden;
+}
+
+.group[class*="bg-white"]:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Large variant specific styles */
+.group[class*="from-gray-900"] {
+  position: relative;
+  overflow: hidden;
+}
+
+.group[class*="from-gray-900"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.1) 2px, transparent 0);
+  background-size: 50px 50px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Custom content styling */
+:host(.media-card) img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+:host(.media-card):hover img {
+  transform: scale(1.05);
+}

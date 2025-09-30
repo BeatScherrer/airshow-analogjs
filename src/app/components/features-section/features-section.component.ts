@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FeatureCardComponent } from '@components/feature-card/feature-card.component';
 
 @Component({
   selector: 'app-features-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FeatureCardComponent],
   templateUrl: './features-section.component.html',
 })
 export class FeaturesSectionComponent {
