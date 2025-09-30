@@ -1,4 +1,23 @@
 <app-navigation />
+
+<!-- Video Player Section -->
+<div class="bg-gray-50 py-8">
+  <div class="max-w-6xl mx-auto px-4">
+    <app-video-player
+      [videoSrc]="/clinic_mover/clinic_mover_elevator.mkv"
+      [positionPercent]="0"
+      [autoplay]="false"
+      [muted]="true"
+      [controls]="true"
+      width="100%"
+      height="400px"
+      (loadedData)="onVideoLoaded()"
+      (timeUpdate)="onVideoTimeUpdate($event)"
+      (durationChange)="onVideoDurationChange($event)"
+    />
+  </div>
+</div>
+
 <div>
   <img
     src="/clinic_mover/perspective.png"

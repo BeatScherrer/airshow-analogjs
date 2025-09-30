@@ -1,0 +1,49 @@
+<div class="video-player-container" [style.width]="width" [style.height]="height">
+  <video
+    #videoElement
+    [src]="videoSrc"
+    [autoplay]="autoplay"
+    [muted]="muted"
+    [loop]="loop"
+    [controls]="controls"
+    [poster]="poster"
+    class="video-element"
+    [attr.aria-label]="'Video player at ' + positionPercent.toFixed(1) + '% position'"
+  >
+    <source [src]="videoSrc" type="video/mp4" />
+    <source [src]="videoSrc" type="video/webm" />
+    <source [src]="videoSrc" type="video/x-matroska" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Loading indicator -->
+  @if (!isVideoLoaded && videoSrc) {
+    <div class="loading-overlay">
+      <div class="loading-spinner">
+        <i class="pi pi-spin pi-spinner text-2xl text-white"></i>
+      </div>
+      <div class="loading-text">Loading video...</div>
+    </div>
+  }
+
+  <!-- Position indicator -->
+  @if (isVideoLoaded && !controls) {
+    <div class="position-indicator">
+      <div class="position-bar">
+        <div
+          class="position-progress"
+          [style.width.%]="positionPercent">
+        </div>
+      </div>
+      <div class="position-text">{{ positionPercent.toFixed(1) }}%</div>
+    </div>
+  }
+
+  <!-- Error message -->
+  @if (!videoSrc) {
+    <div class="error-overlay">
+      <i class="pi pi-exclamation-triangle text-4xl text-red-500 mb-4"></i>
+      <div class="error-text">No video source provided</div>
+    </div>
+  }
+</div>
