@@ -43,7 +43,7 @@ export class NavigationComponent {
     },
     {
       label: "About",
-      icon: "pi pi-home",
+      icon: "pi pi-building",
       command: () => {
         this.router.navigate(["/about"]);
       },
@@ -66,19 +66,19 @@ export class NavigationComponent {
       },
     },
     {
-      label: "Healthcare",
+      label: "Bed Mover",
       icon: "pi pi-wave-pulse",
       command: () => {
         this.router.navigate(["/healthcare"]);
       },
     },
-    {
-      label: "Career",
-      icon: "pi pi-briefcase",
-      command: () => {
-        this.router.navigate(["/career"]);
-      },
-    },
+    // {
+    //   label: "Career",
+    //   icon: "pi pi-briefcase",
+    //   command: () => {
+    //     this.router.navigate(["/career"]);
+    //   },
+    // },
   ];
 
   themeModeChanged(event: ToggleSwitchChangeEvent) {

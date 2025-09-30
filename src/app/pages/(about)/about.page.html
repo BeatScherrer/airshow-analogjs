@@ -1,54 +1,49 @@
 <app-navigation />
 
-<div class="flex flex-col justify-center items-center gap-16">
-  <div class="max-w-6xl">
-    Die MT Robot AG ist ein unabhängiges Unternehmen in der Region Basel
-    (Zwingen). Sämtliche Produkte und Lösungen werden in der Schweiz entwickelt,
-    produziert und international vertrieben. Unsere Mitarbeitenden sind hoch
-    qualifizierte, international erfahrene Spezialisten, welche neue Wege
-    beschreiten und innovative Produkte entwickeln. Wir streben eine
-    langfristige, partnerschaftliche Zusammenarbeit mit Kunden sowie Lieferanten
-    an und pflegen den Austausch mit Hochschulen im In- und Ausland
-    (Technologietransfer). In unserem Fokus stehen wirtschaftlich interessante
-    Lösungen, welche logistische Prozesse optimieren und die Aufgaben der
-    Arbeitskräfte erleichtern und ergänzen. Wir arbeiten kunden- und
-    lösungsorientiert und stehen für Fragen oder ergänzende Informationen gerne
-    zur Verfügung.
+<div class="flex flex-col justify-center items-center gap-16 max-w-2xl">
+  <div class="text-left">
+Die MT Robot AG ist ein unabhängiges Schweizer Unternehmen, welches seit der Gründung im Jahre 2008 eine Software zur Steuerung von autonom navigierenden Robotern entwickelt hat. Zudem wurden Roboter für Anwendungen in der Industrie sowie im Bereich Healthcare entwickelt, produziert und vermarktet. Seit dem Jahre 2023 fokussiert sich die MT Robot AG auf den Bereich Healthcare, um neue innovative Lösungen in der Krankenhauslogistik international anzubieten. In Kooperation mit einem Produzenten in Deutschland wurde der erste vollautomatisierte Bedmover entwickelt und die bewährte Software darauf ausgerichtet und optimiert.
+    </div>
+  <div class="text-left">
+Wir streben eine langfristige, partnerschaftliche Zusammenarbeit mit Kunden und Lieferanten an, um neue Technologien einzusetzen und bedürfnisorientierte Lösungen zu entwickeln. In unserem Fokus sind wirtschaftlich interessante Anwendungen, die logistische Prozesse optimieren und die Aufgaben der Arbeitskräfte erleichtern sowie ergänzen.
+    </div>
+  <div class="text-left">
+Unsere Mitarbeitenden sind hoch qualifizierte, international erfahrene Spezialisten, welche neue Wege beschreiten und qualitativ einwandfreie, zuverlässige Lösungen anstreben. Wir arbeiten Kunden- und Lösungsorientiert und stehen gerne für Fragen, ergänzende Informationen oder eine Präsentation zur Verfügung.
   </div>
 
-  <div class="max-w-6xl">
-    <p-timeline
-      [value]="events"
-      align="alternate"
-      styleClass="customized-timeline"
-    >
-      <ng-template #marker let-event>
-        <span
-          class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
-          [style]="{ 'background-color': event.color }"
-        >
-          <i [class]="event.icon"></i>
-        </span>
-      </ng-template>
-      <ng-template #content let-event>
-        <p-card [header]="event.status" [subheader]="event.date">
-          <img
-            *ngIf="event.image"
-            [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + event.image"
-            [alt]="event.name"
-            width="200"
-            class="shadow"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-            sed consequuntur error repudiandae numquam deserunt quisquam
-            repellat libero asperiores earum nam nobis, culpa ratione quam
-            perferendis esse, cupiditate neque quas!
-          </p>
-        </p-card>
-      </ng-template>
-    </p-timeline>
-  </div>
+  <!-- <div> -->
+  <!--   <p-timeline -->
+  <!--     [value]="events" -->
+  <!--     align="alternate" -->
+  <!--     styleClass="customized-timeline" -->
+  <!--   > -->
+  <!--     <ng-template #marker let-event> -->
+  <!--       <span -->
+  <!--         class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm" -->
+  <!--         [style]="{ 'background-color': event.color }" -->
+  <!--       > -->
+  <!--         <i [class]="event.icon"></i> -->
+  <!--       </span> -->
+  <!--     </ng-template> -->
+  <!--     <ng-template #content let-event> -->
+  <!--       <p-card [header]="event.status" [subheader]="event.date"> -->
+  <!--         <img -->
+  <!--           *ngIf="event.image" -->
+  <!--           [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + event.image" -->
+  <!--           [alt]="event.name" -->
+  <!--           width="200" -->
+  <!--           class="shadow" -->
+  <!--         /> -->
+  <!--         <p> -->
+  <!--           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore -->
+  <!--           sed consequuntur error repudiandae numquam deserunt quisquam -->
+  <!--           repellat libero asperiores earum nam nobis, culpa ratione quam -->
+  <!--           perferendis esse, cupiditate neque quas! -->
+  <!--         </p> -->
+  <!--       </p-card> -->
+  <!--     </ng-template> -->
+  <!--   </p-timeline> -->
+  <!-- </div> -->
 </div>
 
 <app-contact />
