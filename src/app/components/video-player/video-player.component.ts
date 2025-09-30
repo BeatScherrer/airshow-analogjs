@@ -31,6 +31,7 @@ export class VideoPlayerComponent
   @Input() width: string = "100%";
   @Input() height: string = "auto";
   @Input() poster: string = "";
+  @Input() showPositionIndicator: boolean = true;
 
   @Output() loadedData = new EventEmitter<void>();
   @Output() timeUpdate = new EventEmitter<number>();
@@ -112,7 +113,12 @@ export class VideoPlayerComponent
     const video = this.videoElement.nativeElement;
     if (video.duration && !isNaN(video.duration)) {
       const targetTime = (this.positionPercent / 100) * video.duration;
-      video.currentTime = Math.max(0, Math.min(targetTime, video.duration));
+      const newTime = Math.max(0, Math.min(targetTime, video.duration));
+      
+      // Only seek if the difference is significant to reduce jankiness
+      if (Math.abs(video.currentTime - newTime) > 0.033) { // ~1 frame at 30fps
+        video.currentTime = newTime;
+      }
     }
   }
 

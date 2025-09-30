@@ -9,6 +9,11 @@ export default defineConfig(({ mode }) => ({
   build: {
     target: ["es2020"],
   },
+  server: {
+    fs: {
+      allow: ['..']
+    }
+  },
   resolve: {
     mainFields: ["module"],
     alias: {
@@ -17,7 +22,20 @@ export default defineConfig(({ mode }) => ({
       "@services": path.resolve(__dirname, "./src/app/services/"),
     },
   },
-  plugins: [analog()],
+  plugins: [
+    analog(),
+    {
+      name: 'configure-mime-types',
+      configureServer(server) {
+        server.middlewares.use('/clinic_mover', (req, res, next) => {
+          if (req.url?.endsWith('.mkv')) {
+            res.setHeader('Content-Type', 'video/x-matroska');
+          }
+          next();
+        });
+      }
+    }
+  ],
   test: {
     globals: true,
     environment: "jsdom",

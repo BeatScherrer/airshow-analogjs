@@ -1,20 +1,39 @@
-<app-navigation />
+<div class="bg-gray-50 h-screen flex flex-col">
+  <app-navigation />
 
-<!-- Video Player Section -->
-<div class="bg-gray-50 py-8">
-  <div class="max-w-6xl mx-auto px-4">
-    <app-video-player
-      [videoSrc]="/clinic_mover/clinic_mover_elevator.mkv"
-      [positionPercent]="0"
-      [autoplay]="false"
-      [muted]="true"
-      [controls]="true"
-      width="100%"
-      height="400px"
-      (loadedData)="onVideoLoaded()"
-      (timeUpdate)="onVideoTimeUpdate($event)"
-      (durationChange)="onVideoDurationChange($event)"
-    />
+  <!-- Title section with fade effect -->
+  <div class="flex-1 flex items-center justify-center">
+    <div class="text-center px-6" [style.opacity]="titleOpacity">
+      <h1 class="text-6xl md:text-8xl font-bold text-gray-800 mb-6">
+        Healthcare
+        <span class="block text-red-600">Innovation</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto">
+        Transform your hospital bed logistics
+      </p>
+    </div>
+  </div>
+
+  <!-- Video at bottom -->
+  <div class="max-w-6xl mx-auto px-4 pb-8">
+    <div 
+      class="transition-transform duration-75 ease-out"
+      [style.transform]="videoTransform"
+    >
+      <app-video-player
+        [videoSrc]="videoSrc"
+        [positionPercent]="videoPosition"
+        [autoplay]="false"
+        [muted]="true"
+        [controls]="false"
+        [showPositionIndicator]="false"
+        width="100%"
+        height="400px"
+        (loadedData)="onVideoLoaded()"
+        (timeUpdate)="onVideoTimeUpdate($event)"
+        (durationChange)="onVideoDurationChange($event)"
+      />
+    </div>
   </div>
 </div>
 
@@ -30,47 +49,50 @@
     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
   />
 </div>
-<div>
-  <img
-    src="/clinic_mover/safety_perspective.png"
-    alt="Image"
-    class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
-  />
-  <img
-    src="/clinic_mover/safety_perspective_bed.png"
-    alt="Image"
-    class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
-  />
-</div>
-<div>
-  <img
-    src="/clinic_mover/top.png"
-    alt="Image"
-    class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
-  />
-  <img
-    src="/clinic_mover/top_bed.png"
-    alt="Image"
-    class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
-  />
-</div>
-<div>
-  <img
-    src="/clinic_mover/safety_top.png"
-    alt="Image"
-    class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
-  />
-  <img
-    src="/clinic_mover/safety_top_bed.png"
-    alt="Image"
-    class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
-  />
-</div>
-<div>
-  <img
-    src="/clinic_mover/joystick.png"
-    alt="Image"
-    class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover"
-  />
-</div>
+
+<!-- <div> -->
+<!--   <img -->
+<!--     src="/clinic_mover/safety_perspective.png" -->
+<!--     alt="Image" -->
+<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
+<!--   /> -->
+<!--   <img -->
+<!--     src="/clinic_mover/safety_perspective_bed.png" -->
+<!--     alt="Image" -->
+<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
+<!--   /> -->
+<!-- </div> -->
+<!-- <div> -->
+<!--   <img -->
+<!--     src="/clinic_mover/top.png" -->
+<!--     alt="Image" -->
+<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
+<!--   /> -->
+<!--   <img -->
+<!--     src="/clinic_mover/top_bed.png" -->
+<!--     alt="Image" -->
+<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
+<!--   /> -->
+<!-- </div> -->
+<!-- <div> -->
+<!--   <img -->
+<!--     src="/clinic_mover/safety_top.png" -->
+<!--     alt="Image" -->
+<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
+<!--   /> -->
+<!--   <img -->
+<!--     src="/clinic_mover/safety_top_bed.png" -->
+<!--     alt="Image" -->
+<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
+<!--   /> -->
+<!-- </div> -->
+<!-- <div> -->
+<!--   <img -->
+<!--     src="/clinic_mover/joystick.png" -->
+<!--     alt="Image" -->
+<!--     class="md:ml-auto block md:h-full w-auto overflow-hidden object-cover" -->
+<!--   /> -->
+<!-- </div> -->
+<!-- Video Player Section -->
+
 <app-footer />

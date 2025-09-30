@@ -36,6 +36,7 @@
             git
             eza
             fd
+            ffmpeg
 
             # LSPs
             vscode-langservers-extracted
