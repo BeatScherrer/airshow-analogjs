@@ -8,6 +8,7 @@ import { FeaturesSectionComponent } from '@components/features-section/features-
 import { TechnologySectionComponent } from '@components/technology-section/technology-section.component';
 import { IndustrySectionComponent } from '@components/industry-section/industry-section.component';
 import { CallToActionSectionComponent } from '@components/call-to-action-section/call-to-action-section.component';
+import { HighlightComponent } from '@components/highlight/highlight.component';
 
 @Component({
   selector: 'app-landing',
@@ -22,6 +23,7 @@ import { CallToActionSectionComponent } from '@components/call-to-action-section
     TechnologySectionComponent,
     IndustrySectionComponent,
     CallToActionSectionComponent,
+    HighlightComponent,
   ],
   templateUrl: './landing.page.html',
 })
