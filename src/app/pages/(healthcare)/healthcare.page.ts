@@ -43,6 +43,10 @@ export default class HealthcareComponent implements OnInit, OnDestroy {
   }
 
   private updateVideoPosition() {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
+    }
+    
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const documentHeight =
       document.documentElement.scrollHeight - window.innerHeight;
