@@ -29,6 +29,7 @@
     "@angular/router": "^19.0.0",
     "@angular/youtube-player": "^19.2.2",
     "@primeng/themes": "^19.0.9",
+    "@vercel/speed-insights": "^1.2.0",
     "front-matter": "^4.0.2",
     "marked": "^5.0.2",
     "marked-gfm-heading-id": "^3.1.0",
