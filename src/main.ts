@@ -1,7 +1,9 @@
-import 'zone.js';
-import { bootstrapApplication } from '@angular/platform-browser';
+import "zone.js";
+import { bootstrapApplication } from "@angular/platform-browser";
+import { AppComponent } from "./app/app.component";
+import { appConfig } from "./app/app.config";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 
-import { AppComponent } from './app/app.component';
-import { appConfig } from './app/app.config';
+injectSpeedInsights();
 
 bootstrapApplication(AppComponent, appConfig);
