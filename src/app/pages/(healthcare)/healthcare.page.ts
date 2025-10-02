@@ -43,17 +43,17 @@ export default class HealthcareComponent implements OnInit, OnDestroy {
   }
 
   private updateVideoPosition() {
-    if (typeof window === 'undefined' || typeof document === 'undefined') {
+    if (typeof window === "undefined" || typeof document === "undefined") {
       return;
     }
-    
+
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const documentHeight =
       document.documentElement.scrollHeight - window.innerHeight;
 
     // Calculate scroll percentage (0-100)
     const scrollPercent = Math.min(
-      Math.max((scrollTop / documentHeight) * 300, 0),
+      Math.max((scrollTop / documentHeight) * 500, 0),
       100,
     );
 

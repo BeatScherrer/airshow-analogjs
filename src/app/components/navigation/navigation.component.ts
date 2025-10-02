@@ -35,14 +35,14 @@ export class NavigationComponent {
 
   items = [
     {
-      label: "Home",
+      label: "Startseite",
       icon: "pi pi-home",
       command: () => {
         this.router.navigate(["/"]);
       },
     },
     {
-      label: "About",
+      label: "Über uns",
       icon: "pi pi-building",
       command: () => {
         this.router.navigate(["/about"]);

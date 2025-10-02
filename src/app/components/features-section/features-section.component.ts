@@ -12,21 +12,21 @@ export class FeaturesSectionComponent {
   features = [
     {
       icon: "pi pi-cog",
-      title: "Advanced Automation",
+      title: "Erweiterte Automatisierung",
       description:
-        "Modern autonomous systems that adapt to the environment and deliver robust behaviors.",
+        "Moderne autonome Systeme, die sich an die Umgebung anpassen.",
     },
     {
       icon: "pi pi-chart-line",
-      title: "Real-time Analytics",
+      title: "Echtzeit-Analysen",
       description:
-        "Comprehensive monitoring and analytics dashboard for optimal performance insights.",
+        "Umfassendes Überwachungs- und Analyse-Dashboard für optimale Leistungseinblicke.",
     },
     {
       icon: "pi pi-users",
-      title: "Expert Support",
+      title: "Experten-Support",
       description:
-        "Technical support from our team of robotics engineers and specialists.",
+        "Technischer Support von unserem Team aus Robotik-Ingenieuren und Spezialisten.",
     },
   ];
 }
