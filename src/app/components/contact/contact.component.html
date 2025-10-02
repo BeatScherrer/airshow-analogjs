@@ -1,28 +1,10 @@
 <p-card header="Contact">
   <div class="flex flex-col gap-5 justify-center">
-    <div class="flex flex-wrap gap-10 p-4 justify-center">
-      <div class="flex flex-col gap-8">
-        <div class="flex flex-col items-start">
-          <span>MT Robot AG</span>
-          <span>Brislachstrasse 25</span>
-          <span>CH-4226 Breitenbach</span>
-        </div>
-
-        <div class="flex flex-col items-start">
-          <span><i class="pi pi-phone"></i> +41 61 775 20 20</span>
-          <span>
-            <a href="mailto:contact@mt-robot.com">
-              <i class="pi pi-envelope"></i>
-              contact&#64;mt-robot.com</a
-            ></span
-          >
-        </div>
-      </div>
-
+    <div class="flex justify-center p-4">
       <form
         [formGroup]="contactForm"
         (ngSubmit)="onSubmit()"
-        class="flex flex-col gap-8"
+        class="flex flex-col gap-8 w-full max-w-md"
       >
         <p-floatlabel>
           <input
