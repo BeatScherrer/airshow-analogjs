@@ -12,7 +12,7 @@ export class FeaturesSectionComponent {
   features = [
     {
       icon: "pi pi-cog",
-      title: "Erweiterte Automatisierung",
+      title: "Fortgeschrittene Automatisierung",
       description:
         "Moderne autonome Systeme, die sich an die Umgebung anpassen.",
     },
