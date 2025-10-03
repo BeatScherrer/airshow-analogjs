@@ -1,9 +1,13 @@
 import { Component, inject } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { toSignal } from "@angular/core/rxjs-interop";
-import { Router, RouterLink } from "@angular/router";
+import {
+  ActivatedRoute,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from "@angular/router";
 import { AppStateService, ThemeMode } from "@services/app-state.service";
-import { MenubarModule } from "primeng/menubar";
 import {
   ToggleSwitchChangeEvent,
   ToggleSwitchModule,
@@ -15,16 +19,17 @@ import { CommonModule } from "@angular/common";
   selector: "app-navigation",
   imports: [
     ToggleSwitchModule,
-    MenubarModule,
     FormsModule,
     CommonModule,
     RouterLink,
+    RouterLinkActive,
   ],
   templateUrl: "./navigation.component.html",
   styleUrl: "./navigation.component.css",
 })
 export class NavigationComponent {
   router = inject(Router);
+  activatedRoute = inject(ActivatedRoute);
   appStateService = inject(AppStateService);
 
   isLightMode = toSignal(
@@ -33,60 +38,38 @@ export class NavigationComponent {
       .pipe(map((mode) => mode === ThemeMode.LIGHT)),
   );
 
+  isMobileMenuOpen = false;
+
   items = [
     {
       label: "Startseite",
       icon: "pi pi-home",
-      command: () => {
-        this.router.navigate(["/"]);
-      },
+      route: "/",
     },
     {
       label: "Über uns",
       icon: "pi pi-building",
-      command: () => {
-        this.router.navigate(["/about"]);
-      },
-      // items: [
-      //   {
-      //     label: "Installation",
-      //     route: "/installation",
-      //   },
-      //   {
-      //     label: "Configuration",
-      //     route: "/configuration",
-      //   },
-      // ],
+      route: "/about",
     },
-    // {
-    //   label: "Software",
-    //   icon: "pi pi-code",
-    //   command: () => {
-    //     this.router.navigate(["/software"]);
-    //   },
-    // },
     {
       label: "Bed Mover",
       icon: "pi pi-wave-pulse",
-      command: () => {
-        this.router.navigate(["/healthcare"]);
-      },
+      route: "/healthcare",
     },
-    // {
-    //   label: "Sandbox",
-    //   icon: "pi pi-palette",
-    //   command: () => {
-    //     this.router.navigate(["/sandbox"]);
-    //   },
-    // },
-    // {
-    //   label: "Career",
-    //   icon: "pi pi-briefcase",
-    //   command: () => {
-    //     this.router.navigate(["/career"]);
-    //   },
-    // },
   ];
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+  }
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+    this.closeMobileMenu();
+  }
 
   themeModeChanged(event: ToggleSwitchChangeEvent) {
     const light_mode = event.checked;
