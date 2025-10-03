@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => ({
             "@angular/common",
             "@angular/platform-browser",
           ],
-          content: ["@analogjs/content", "marked", "prismjs"],
+          content: ["@analogjs/content"],
         },
       },
     },
