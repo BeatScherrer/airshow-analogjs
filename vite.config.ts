@@ -12,19 +12,22 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['@angular/core', '@angular/common', '@angular/platform-browser'],
-          primeng: ['primeng', '@primeng/themes', 'primeicons'],
-          content: ['@analogjs/content', 'marked', 'prismjs']
-        }
-      }
-    }
+          vendor: [
+            "@angular/core",
+            "@angular/common",
+            "@angular/platform-browser",
+          ],
+          content: ["@analogjs/content", "marked", "prismjs"],
+        },
+      },
+    },
   },
   server: {
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     port: 5173,
     fs: {
-      allow: ['..']
-    }
+      allow: [".."],
+    },
   },
   resolve: {
     mainFields: ["module"],
@@ -37,16 +40,16 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     analog(),
     {
-      name: 'configure-mime-types',
+      name: "configure-mime-types",
       configureServer(server) {
-        server.middlewares.use('/clinic_mover', (req, res, next) => {
-          if (req.url?.endsWith('.mkv')) {
-            res.setHeader('Content-Type', 'video/x-matroska');
+        server.middlewares.use("/clinic_mover", (req, res, next) => {
+          if (req.url?.endsWith(".mkv")) {
+            res.setHeader("Content-Type", "video/x-matroska");
           }
           next();
         });
-      }
-    }
+      },
+    },
   ],
   test: {
     globals: true,
