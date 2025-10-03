@@ -3,6 +3,7 @@ import { FooterComponent } from "@components/footer/footer.component";
 import { NavigationComponent } from "@components/navigation/navigation.component";
 import { VideoPlayerComponent } from "@components/video-player/video-player.component";
 import { FeatureCardComponent } from "@components/feature-card/feature-card.component";
+import { PngSequenceAnimationComponent } from "@components/png-sequence-animation/png-sequence-animation.component";
 
 @Component({
   selector: "app-healthcare",
@@ -11,6 +12,7 @@ import { FeatureCardComponent } from "@components/feature-card/feature-card.comp
     FooterComponent,
     VideoPlayerComponent,
     FeatureCardComponent,
+    PngSequenceAnimationComponent,
   ],
   templateUrl: "./healthcare.page.html",
 })

@@ -15,25 +15,17 @@
   </div>
 
   <!-- Video at bottom -->
-  <div class="max-w-6xl mx-auto px-4 pb-8">
-    <div
-      class="transition-transform duration-75 ease-out"
-      [style.transform]="videoTransform"
-    >
-      <app-video-player
-        [videoSrc]="videoSrc"
-        [positionPercent]="videoPosition"
-        [autoplay]="false"
-        [muted]="true"
-        [controls]="false"
-        [showPositionIndicator]="false"
-        width="100%"
-        height="400px"
-        (loadedData)="onVideoLoaded()"
-        (timeUpdate)="onVideoTimeUpdate($event)"
-        (durationChange)="onVideoDurationChange($event)"
-      />
-    </div>
+  <div class="w-full lg:w-1/2 mx-auto mb-12">
+    <!-- <div -->
+    <!--   class="transition-transform duration-75 ease-out w-full h-full" -->
+    <!--   [style.transform]="videoTransform" -->
+    <!-- > -->
+    <app-png-sequence-animation
+      [frameCount]="240"
+      basePath="/clinic_mover/elevator_animation/"
+      [scrollFactor]="1.0"
+    />
+    <!-- </div> -->
   </div>
 </div>
 
