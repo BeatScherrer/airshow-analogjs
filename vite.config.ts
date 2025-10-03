@@ -8,6 +8,16 @@ import path from "path";
 export default defineConfig(({ mode }) => ({
   build: {
     target: ["es2020"],
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['@angular/core', '@angular/common', '@angular/platform-browser'],
+          primeng: ['primeng', '@primeng/themes', 'primeicons'],
+          content: ['@analogjs/content', 'marked', 'prismjs']
+        }
+      }
+    }
   },
   server: {
     host: '0.0.0.0',
