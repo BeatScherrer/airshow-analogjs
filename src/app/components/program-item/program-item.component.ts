@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, inject } from "@angular/core";
+import { Router } from "@angular/router";
 import { Program, StrapiImage } from "@services/strapi/program.service";
 
 @Component({
@@ -10,6 +11,9 @@ import { Program, StrapiImage } from "@services/strapi/program.service";
 })
 export class ProgramItemComponent {
   @Input() program!: Program;
+  @Input() programId!: string;
+  
+  private router = inject(Router);
 
   getThumbnailUrl(): string | null {
     if (!this.program.Thumbnail) return null;
@@ -29,5 +33,9 @@ export class ProgramItemComponent {
     }
     
     return this.program.Thumbnail.alternativeText || this.program.Title;
+  }
+
+  viewDetails(): void {
+    this.router.navigate(['/program', this.programId]);
   }
 }

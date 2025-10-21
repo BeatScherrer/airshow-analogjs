@@ -4,7 +4,8 @@
   <div class="programs-list" *ngIf="program()?.data as programs; else loading">
     <app-program-item 
       *ngFor="let programItem of programs" 
-      [program]="programItem">
+      [program]="programItem"
+      [programId]="programItem.documentId">
     </app-program-item>
   </div>
   

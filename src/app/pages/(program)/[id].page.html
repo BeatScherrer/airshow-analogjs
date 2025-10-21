@@ -1,0 +1,99 @@
+<div class="program-detail-container">
+  <div class="program-detail-header">
+    <button class="back-button" (click)="goBack()">
+      ← Back to Programs
+    </button>
+  </div>
+
+  <div class="program-detail-content" *ngIf="program()?.data as programData; else loading">
+    <div class="program-hero">
+      <div class="program-image" *ngIf="getThumbnailUrl()">
+        <img 
+          [src]="'http://localhost:1337' + getThumbnailUrl()" 
+          [alt]="getThumbnailAlt()"
+          class="hero-image">
+      </div>
+      
+      <div class="program-info">
+        <div class="program-badges" *ngIf="programData.Highlight">
+          <span class="highlight-badge">★ Featured Program</span>
+        </div>
+        
+        <h1 class="program-title">{{ programData.Title }}</h1>
+        
+        <div class="program-schedule-info">
+          <h3>Schedule</h3>
+          <div class="schedule-days">
+            <div class="day-item" [class.available]="programData.Saturday">
+              <span class="day-name">Saturday</span>
+              <span class="day-status">
+                {{ programData.Saturday ? 'Available' : 'Not Available' }}
+              </span>
+            </div>
+            <div class="day-item" [class.available]="programData.Sunday">
+              <span class="day-name">Sunday</span>
+              <span class="day-status">
+                {{ programData.Sunday ? 'Available' : 'Not Available' }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-description-section" *ngIf="programData.Description">
+      <h2>About This Program</h2>
+      <div class="description-content">
+        <p>{{ programData.Description }}</p>
+      </div>
+    </div>
+
+    <div class="program-details-section">
+      <h2>Program Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="detail-label">Program Type:</span>
+          <span class="detail-value">
+            {{ programData.Highlight ? 'Featured Event' : 'Standard Program' }}
+          </span>
+        </div>
+        
+        <div class="detail-item">
+          <span class="detail-label">Weekend Availability:</span>
+          <span class="detail-value">
+            <span *ngIf="programData.Saturday && programData.Sunday">Both Days</span>
+            <span *ngIf="programData.Saturday && !programData.Sunday">Saturday Only</span>
+            <span *ngIf="!programData.Saturday && programData.Sunday">Sunday Only</span>
+            <span *ngIf="!programData.Saturday && !programData.Sunday">Not Available</span>
+          </span>
+        </div>
+        
+        <div class="detail-item">
+          <span class="detail-label">Created:</span>
+          <span class="detail-value">{{ programData.createdAt | date:'medium' }}</span>
+        </div>
+        
+        <div class="detail-item" *ngIf="programData.updatedAt !== programData.createdAt">
+          <span class="detail-label">Last Updated:</span>
+          <span class="detail-value">{{ programData.updatedAt | date:'medium' }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-actions">
+      <button class="primary-button" [disabled]="!programData.Saturday && !programData.Sunday">
+        {{ programData.Saturday || programData.Sunday ? 'Register for Program' : 'Program Unavailable' }}
+      </button>
+      <button class="secondary-button" (click)="goBack()">
+        View All Programs
+      </button>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+      <p>Loading program details...</p>
+    </div>
+  </ng-template>
+</div>

@@ -10,6 +10,8 @@ export interface StrapiImage {
 }
 
 export interface Program {
+  id: number;
+  documentId: string;
   Title: string;
   Description: string;
   Thumbnail: StrapiImage | StrapiImage[] | null;
@@ -18,9 +20,25 @@ export interface Program {
   Sunday: boolean;
   createdAt: string;
   updatedAt: string;
+  publishedAt: string;
 }
 
-type Programs = Program[];
+interface StrapiResponse<T> {
+  data: T[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
+interface StrapiSingleResponse<T> {
+  data: T;
+  meta: unknown;
+}
 
 /** TODO: use api key from environment */
 @Injectable({
@@ -36,15 +54,15 @@ export class ProgramService {
 
   constructor(private http: HttpClient) {}
 
-  getProgram(): Observable<Programs> {
+  getProgram(): Observable<StrapiResponse<Program>> {
     return this.http.get(`${this.apiUrl}?populate=*`, {
       headers: this.headers,
-    }) as Observable<Programs>;
+    }) as Observable<StrapiResponse<Program>>;
   }
 
-  getProgramById(id: string): Observable<any> {
+  getProgramById(id: string): Observable<StrapiResponse<Program>> {
     return this.http.get(`${this.apiUrl}/${id}?populate=*`, {
       headers: this.headers,
-    });
+    }) as Observable<StrapiResponse<Program>>;
   }
 }
