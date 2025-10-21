@@ -8,22 +8,12 @@ import {
   RouterLinkActive,
 } from "@angular/router";
 import { AppStateService, ThemeMode } from "@services/app-state.service";
-import {
-  ToggleSwitchChangeEvent,
-  ToggleSwitchModule,
-} from "primeng/toggleswitch";
 import { map } from "rxjs/operators";
 import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-navigation",
-  imports: [
-    ToggleSwitchModule,
-    FormsModule,
-    CommonModule,
-    RouterLink,
-    RouterLinkActive,
-  ],
+  imports: [FormsModule, CommonModule, RouterLink, RouterLinkActive],
   templateUrl: "./navigation.component.html",
   styleUrl: "./navigation.component.css",
 })
@@ -71,10 +61,10 @@ export class NavigationComponent {
     this.closeMobileMenu();
   }
 
-  themeModeChanged(event: ToggleSwitchChangeEvent) {
-    const light_mode = event.checked;
-    const theme_mode = light_mode ? ThemeMode.LIGHT : ThemeMode.DARK;
-
-    this.appStateService.setThemeMode(theme_mode);
-  }
+  // themeModeChanged(event: ToggleSwitchChangeEvent) {
+  //   const light_mode = event.checked;
+  //   const theme_mode = light_mode ? ThemeMode.LIGHT : ThemeMode.DARK;
+  //
+  //   this.appStateService.setThemeMode(theme_mode);
+  // }
 }
