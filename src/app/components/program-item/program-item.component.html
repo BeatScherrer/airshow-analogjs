@@ -1,0 +1,45 @@
+<div class="program-item" [class.highlight]="program.Highlight">
+  <div class="program-thumbnail" *ngIf="getThumbnailUrl()">
+    <img 
+      [src]="'http://localhost:1337' + getThumbnailUrl()" 
+      [alt]="getThumbnailAlt()"
+      class="thumbnail-image">
+  </div>
+
+  <div class="program-header">
+    <h3 class="program-title">{{ program.Title }}</h3>
+    <div class="program-badges">
+      <span class="highlight-badge" *ngIf="program.Highlight">★ Highlight</span>
+    </div>
+  </div>
+
+  <div class="program-description" *ngIf="program.Description">
+    <p>{{ program.Description }}</p>
+  </div>
+
+  <div class="program-schedule">
+    <div class="schedule-item" [class.active]="program.Saturday">
+      <span class="day-label">Saturday</span>
+      <span class="status" [class.available]="program.Saturday">
+        {{ program.Saturday ? '✓' : '✗' }}
+      </span>
+    </div>
+    <div class="schedule-item" [class.active]="program.Sunday">
+      <span class="day-label">Sunday</span>
+      <span class="status" [class.available]="program.Sunday">
+        {{ program.Sunday ? '✓' : '✗' }}
+      </span>
+    </div>
+  </div>
+
+  <div class="program-meta">
+    <div class="meta-item">
+      <span class="meta-label">Created:</span>
+      <span class="meta-value">{{ program.createdAt | date:'short' }}</span>
+    </div>
+    <div class="meta-item" *ngIf="program.updatedAt !== program.createdAt">
+      <span class="meta-label">Updated:</span>
+      <span class="meta-value">{{ program.updatedAt | date:'short' }}</span>
+    </div>
+  </div>
+</div>

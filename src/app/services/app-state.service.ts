@@ -28,8 +28,8 @@ export class AppStateService {
 
     // NOTE: The theme mode is effectively toggled by adding a class to the body
 
-    if (typeof document !== 'undefined') {
-      const darkModeClassName = "mt-robot-dark";
+    if (typeof document !== "undefined") {
+      const darkModeClassName = "dark";
       const element = document.querySelector("html");
       if (themeMode === ThemeMode.DARK) {
         element?.classList.add(darkModeClassName);
@@ -44,13 +44,13 @@ export class AppStateService {
   }
 
   private setItemInStorage(key: string, value: string): void {
-    if (typeof localStorage !== 'undefined') {
+    if (typeof localStorage !== "undefined") {
       localStorage.setItem(key, value);
     }
   }
 
   private getItemFromStorage(key: string): string | null {
-    if (typeof localStorage !== 'undefined') {
+    if (typeof localStorage !== "undefined") {
       return localStorage.getItem(key);
     }
     return null;

@@ -1,5 +1,5 @@
 {
-  description = "MT-Robot AG website flake";
+  description = "Airshow website flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";

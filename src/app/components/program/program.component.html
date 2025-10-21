@@ -1,0 +1,14 @@
+<div class="programs-container">
+  <h2>Programs</h2>
+  
+  <div class="programs-list" *ngIf="program()?.data as programs; else loading">
+    <app-program-item 
+      *ngFor="let programItem of programs" 
+      [program]="programItem">
+    </app-program-item>
+  </div>
+  
+  <ng-template #loading>
+    <div class="loading">Loading programs...</div>
+  </ng-template>
+</div>

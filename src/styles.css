@@ -14,14 +14,14 @@
   --surface-overlay: #ffffff;
   --surface-border: #dee2e6;
   --surface-hover: #f8f9fa;
-  
+
   --text-color: #212529;
   --text-color-secondary: #6c757d;
   --text-color-muted: #9ca3af;
-  
+
   --primary-color: var(--p-primary-500);
   --primary-color-text: #ffffff;
-  
+
   /* Custom semantic colors */
   --background-gradient-from: var(--p-primary-600);
   --background-gradient-to: var(--p-gray-900);
@@ -31,21 +31,21 @@
 }
 
 /* Dark theme colors */
-.mt-robot-dark {
+.dark {
   --surface-ground: var(--p-gray-950);
   --surface-section: var(--p-gray-900);
   --surface-card: var(--p-gray-800);
   --surface-overlay: var(--p-gray-800);
   --surface-border: var(--p-gray-700);
   --surface-hover: var(--p-gray-700);
-  
+
   --text-color: var(--p-gray-50);
   --text-color-secondary: var(--p-gray-300);
   --text-color-muted: var(--p-gray-400);
-  
+
   --primary-color: var(--p-primary-400);
   --primary-color-text: var(--p-gray-900);
-  
+
   /* Custom semantic colors for dark mode */
   --background-gradient-from: var(--p-primary-600);
   --background-gradient-to: var(--p-gray-950);
@@ -59,39 +59,39 @@
   .bg-surface {
     background-color: var(--surface-ground);
   }
-  
+
   .bg-surface-section {
     background-color: var(--surface-section);
   }
-  
+
   .bg-surface-card {
     background-color: var(--surface-card);
   }
-  
+
   .text-surface {
     color: var(--text-color);
   }
-  
+
   .text-surface-secondary {
     color: var(--text-color-secondary);
   }
-  
+
   .text-surface-muted {
     color: var(--text-color-muted);
   }
-  
+
   .bg-theme-gradient {
     background: linear-gradient(to bottom right, var(--background-gradient-from), var(--background-gradient-to));
   }
-  
+
   .bg-hero {
     background-color: var(--hero-background);
   }
-  
+
   .bg-section {
     background-color: var(--section-background);
   }
-  
+
   .bg-section-alt {
     background-color: var(--section-background-alt);
   }
