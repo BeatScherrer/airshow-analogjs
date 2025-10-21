@@ -1,5 +1,3 @@
-@import "primeicons/primeicons.css";
-
 /* Tailwind directives  */
 @tailwind base;
 @tailwind components;
@@ -81,7 +79,11 @@
   }
 
   .bg-theme-gradient {
-    background: linear-gradient(to bottom right, var(--background-gradient-from), var(--background-gradient-to));
+    background: linear-gradient(
+      to bottom right,
+      var(--background-gradient-from),
+      var(--background-gradient-to)
+    );
   }
 
   .bg-hero {
